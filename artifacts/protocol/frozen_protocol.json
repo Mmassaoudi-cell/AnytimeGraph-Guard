@@ -1,0 +1,75 @@
+{
+  "status": "FROZEN_BEFORE_MODEL_EVALUATION",
+  "frozen_date": "2026-07-31",
+  "selection_rule": "validation median across seeds; test inaccessible to tuning scripts",
+  "primary_metric": "multiclass macro-F1",
+  "secondary_metrics": [
+    "balanced_accuracy",
+    "minority_recall",
+    "macro_PR_AUC",
+    "FPR",
+    "FNR",
+    "ECE"
+  ],
+  "practical_equivalence_margin_macro_f1": 0.02,
+  "seeds": [
+    1103,
+    2207,
+    3313,
+    4421,
+    5527
+  ],
+  "split_assignment": "five stratified group folds; fold 0 test, fold 1 validation, folds 2-4 train",
+  "preprocessing": "fit imputation, scaling, categorical encoding, graph-frequency maps, feature selection, calibration, and thresholds on train/validation only",
+  "duplicate_policy": "drop exact duplicates before splitting; reject conflicting-label duplicates",
+  "test_gate": "src/final_evaluation.py requires this file and consumes frozen candidate/hyperparameter record",
+  "manifest_sha256": {
+    "toniot": "142d8d07c1d1de27f7ccef89c7e83e3b4be951e7f8598e6da348248ec9db15a3",
+    "edgeiiot": "fcf5ea65e09bf5ac19efbab754ac738e3601e01d5a13b0a308494da273532cf5",
+    "apa_ddos": "c5ce6a9fd7259b68ead0d94e6f40f2fdcbdba108ca3653941fb0661a2a244c3c"
+  },
+  "dataset_specs": {
+    "toniot": {
+      "label": "type",
+      "binary": "label",
+      "benign": "normal",
+      "src": "src_ip",
+      "dst": "dst_ip",
+      "relation": [
+        "proto",
+        "service",
+        "conn_state"
+      ],
+      "split_basis": "directed source-destination pair"
+    },
+    "edgeiiot": {
+      "label": "Attack_type",
+      "binary": "Attack_label",
+      "benign": "Normal",
+      "src": "ip.src_host",
+      "dst": "ip.dst_host",
+      "relation": [
+        "http.request.method",
+        "mqtt.msgtype",
+        "tcp.dstport",
+        "udp.port",
+        "mbtcp.unit_id"
+      ],
+      "split_basis": "class-block capture segment (endpoint-disjoint split infeasible for several classes)"
+    },
+    "apa_ddos": {
+      "label": "Label",
+      "binary": null,
+      "benign": "Benign",
+      "src": "ip.src",
+      "dst": "ip.dst",
+      "relation": [
+        "ip.proto",
+        "tcp.srcport",
+        "tcp.dstport"
+      ],
+      "time": "frame.time",
+      "split_basis": "source device"
+    }
+  }
+}

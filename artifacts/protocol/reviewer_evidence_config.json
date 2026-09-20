@@ -1,0 +1,30 @@
+{
+  "purpose": "reviewer evidence for imbalanced intrusion detection",
+  "models": [
+    "AnytimeGraph-Guard",
+    "LightGBM",
+    "XGBoost"
+  ],
+  "datasets": [
+    "toniot",
+    "edgeiiot",
+    "apa_ddos"
+  ],
+  "seeds": [
+    1103,
+    2207,
+    3313,
+    4421,
+    5527
+  ],
+  "train_cap": 60000,
+  "splits": "existing frozen manifests",
+  "feature_rule": "proposed uses X_all; LightGBM and XGBoost use X_base as in the confirmatory benchmark",
+  "selection": "none; models and hyperparameters copied from final_evaluation.py",
+  "test_labels_used_for_tuning": false,
+  "curve_tasks": [
+    "binary benign versus attack",
+    "one-vs-rest per class",
+    "macro one-vs-rest"
+  ]
+}

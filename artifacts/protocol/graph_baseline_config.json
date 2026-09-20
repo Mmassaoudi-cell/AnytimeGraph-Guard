@@ -1,0 +1,13 @@
+{
+  "models": [
+    "GraphSAGE",
+    "R-GCN",
+    "GATv2"
+  ],
+  "hidden": 24,
+  "decoder": 64,
+  "epochs": 14,
+  "training_cap": 60000,
+  "graph": "training endpoints/edges only; unseen nodes map to isolated unknown",
+  "created_before_graph_test_load": true
+}

@@ -1,0 +1,20 @@
+{
+  "status": "post-hoc exploratory because the original held-out results were already examined",
+  "selection_labels": "validation only",
+  "base": "frozen graph-context HistGradientBoosting encoder",
+  "expert": "LightGBM trained on the same train-only graph-context features",
+  "base_weight_grid": [
+    1.0,
+    0.9,
+    0.8,
+    0.7,
+    0.6,
+    0.5
+  ],
+  "tie_break": "largest base weight",
+  "temperatures": "fit separately on validation NLL",
+  "test_labels_used_for_selection": false,
+  "convergence_scope": "primary HGB branch; three seeds",
+  "sensitivity_scope": "one-factor-at-a-time validation macro-F1; three seeds",
+  "robustness_scope": "frozen validation-selected enhancement; three seeds"
+}

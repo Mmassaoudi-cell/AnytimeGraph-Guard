@@ -1,0 +1,40 @@
+{
+  "selected_candidate": "AnytimeGraph-Guard",
+  "selection_basis": "five-seed validation only; median primary metric with no-collapse and minority-recall constraints",
+  "selected_hyperparameters": {
+    "max_iter": 200,
+    "max_leaf_nodes": 63,
+    "learning_rate": 0.06,
+    "l2_regularization": 2.0,
+    "min_samples_leaf": 30
+  },
+  "all_best_configs": {
+    "AnytimeGraph-Guard": {
+      "max_iter": 200,
+      "max_leaf_nodes": 63,
+      "learning_rate": 0.06,
+      "l2_regularization": 2.0,
+      "min_samples_leaf": 30
+    },
+    "RelKAN-Guard": {
+      "grid": 8,
+      "epochs": 16,
+      "lr": 0.002,
+      "reg": 0.002,
+      "train_cap": 40000,
+      "val_cap": 25000
+    },
+    "HD-Guard-RL": {
+      "dim": 2048,
+      "train_cap": 50000,
+      "val_cap": 25000
+    }
+  },
+  "test_evaluated_at_selection": false,
+  "primary_metric": "multiclass macro-F1",
+  "constraints": {
+    "worst_macro_f1_min": 0.1,
+    "median_minority_recall_min": 0.05,
+    "median_ece_max": 0.3
+  }
+}

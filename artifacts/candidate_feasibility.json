@@ -1,0 +1,77 @@
+{
+  "feasibility": [
+    {
+      "id": 1,
+      "candidate": "RelKAN-Guard",
+      "status": "fully supported",
+      "reason": "All three selected corpora expose relations and endpoint graphs; relation-conditioned spline messages can be evaluated directly."
+    },
+    {
+      "id": 2,
+      "candidate": "KFE-Guard",
+      "status": "unsupported",
+      "reason": "No corpus provides validated future graph-state densities, critical-host compromise horizons, or action-conditioned transitions."
+    },
+    {
+      "id": 3,
+      "candidate": "AnytimeGraph-Guard",
+      "status": "fully supported",
+      "reason": "APA and raw Edge events are ordered; APA provides source-disjoint benign/attack streams for anytime evidence and stopping."
+    },
+    {
+      "id": 4,
+      "candidate": "ParticleGuard-GRL",
+      "status": "partially supported",
+      "reason": "Missing/deceptive telemetry and hidden attacker states must be simulated; particle belief accuracy can be tested only under declared masks."
+    },
+    {
+      "id": 5,
+      "candidate": "WasserGuard-GRL",
+      "status": "partially supported",
+      "reason": "Structured feature/protocol/intensity perturbations are feasible, but observed attacker action distributions and rewards are absent."
+    },
+    {
+      "id": 6,
+      "candidate": "CondenseGuard-RL",
+      "status": "partially supported",
+      "reason": "Graphs can be condensed, but logged response outcomes and Bellman targets are absent; only detector/rare-class retention is testable."
+    },
+    {
+      "id": 7,
+      "candidate": "AutoEdge-Guard",
+      "status": "partially supported",
+      "reason": "Desktop CPU/GPU timings support a hardware-proxy search only; no target edge device or measured energy is available."
+    },
+    {
+      "id": 8,
+      "candidate": "HD-Guard-RL",
+      "status": "fully supported",
+      "reason": "Endpoint, relation, and feature hypervectors plus online prototype updates are directly implementable; action quality remains simulated."
+    },
+    {
+      "id": 9,
+      "candidate": "SINDyGraph-Guard",
+      "status": "unsupported",
+      "reason": "No defensible continuous attack-state derivatives, containment inputs, or controlled propagation equations are present."
+    },
+    {
+      "id": 10,
+      "candidate": "InvariantGuard-RL",
+      "status": "partially supported",
+      "reason": "Multiple corpora form environments, but only binary labels and coarse graph statistics reconcile without inventing mechanisms."
+    }
+  ],
+  "screened_candidates": [
+    "RelKAN-Guard",
+    "AnytimeGraph-Guard",
+    "HD-Guard-RL"
+  ],
+  "partial_candidate_prototype_modules": [
+    "ParticleBelief",
+    "condensed_coreset",
+    "structured-shift generator in robustness evaluation",
+    "hardware-proxy compact search",
+    "binary multi-environment evaluation"
+  ],
+  "selection_data": "validation only"
+}

@@ -1,0 +1,19 @@
+name: anytimegraph-rl
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - pyarrow
+  - openpyxl
+  - pip
+  - pip:
+      - xgboost
+      - lightgbm
+      - catboost
+      - torch

@@ -1,0 +1,32 @@
+{
+  "models": [
+    "Logistic Regression",
+    "Linear SVM",
+    "RBF SVM",
+    "Gaussian Naive Bayes",
+    "k-nearest neighbors",
+    "Decision Tree",
+    "Random Forest",
+    "ExtraTrees",
+    "Gradient Boosting",
+    "HistGradientBoosting",
+    "XGBoost",
+    "LightGBM",
+    "CatBoost",
+    "MLP",
+    "Graph-context MLP",
+    "AnytimeGraph-Guard"
+  ],
+  "train_cap": 60000,
+  "rbf_cap": 15000,
+  "gradient_boost_cap": 30000,
+  "seeds": [
+    1103,
+    2207,
+    3313,
+    4421,
+    5527
+  ],
+  "feature_rule": "tabular baselines use X_base; graph models and proposed use X_all",
+  "created_before_test_load": true
+}
